@@ -1,8 +1,8 @@
 import pygame
 
+from farm import Farm
 from menu_build import MenuBuild
 from plot import Plot
-from farm import Farm
 
 
 class World:
@@ -10,89 +10,73 @@ class World:
     def __init__(self):
 
         self.food = 0
-        
-        self.selected_plot = None
 
         self.plots = [
-
             Plot(100, 100),
             Plot(250, 100),
             Plot(400, 100)
-
         ]
 
         self.menu_build = MenuBuild(self.build)
 
     def handle_click(self, mx, my):
 
+        # UI primero
         if self.menu_build.handle_click(mx, my):
             return
 
+        # Mundo
         for plot in self.plots:
 
-            if not plot.rect.collidepoint(mx, my):
-                continue
+            if plot.rect.collidepoint(mx, my):
 
-            if plot.building is None:
-                self.selected_plot = plot
+                if plot.building is None:
+                    self.menu_build.open(plot)
 
-                self.menu_build.open()
-
-                return
-
-            # # parcela vacía, le asigno una(cambiar)
-            # if plot.building is None:
-
-            #     plot.building = Farm()
-            #     self.menu_build_is_active = True
-            #     return
-
-            building = plot.building
-
+                    return
             
+                building = plot.building
 
-            # si el plot al que se le hizo click es una granja
-            if isinstance(building, Farm):
 
-                if building.state == "idle":
-                    # Aca abriría el menú
 
-                    building.plant(
-                        amount=100,
-                        duration=10
-                    )
+                # si el plot al que se le hizo click es una granja
+                if isinstance(building, Farm):
 
-                elif building.state == "ready":
+                    if building.state == "idle":
+                        # Aca abriría el menú
 
-                    gained = building.collect()
+                        building.plant(
+                            amount=100,
+                            duration=10
+                        )
 
-                    self.food += gained
+                    elif building.state == "ready":
 
-                    print(
-                        f"Food: {self.food}"
-                    )
+                        gained = building.collect()
 
-    def build(self, building_class):
-        if self.selected_plot is None:
-            return
+                        self.food += gained
 
-        self.selected_plot.building = building_class()
+                        print(
+                            f"Food: {self.food}"
+                        )
+
+    def build(self, building_class, plot):
+
+        plot.building = building_class()
+
         self.menu_build.close()
-        self.selected_plot = None
 
     def update(self, dt):
 
         for plot in self.plots:
 
             if plot.building:
-
                 plot.building.update(dt)
 
     def draw(self, screen):
 
         for plot in self.plots:
 
-            # parcela vacía
             pygame.draw.rect(
                 screen,
                 (60, 60, 60),
@@ -112,5 +96,5 @@ class World:
                     screen,
                     plot.rect
                 )
-            if self.menu_build.visible:
-                self.menu_build.draw(screen)
+
+        self.menu_build.draw(screen)
