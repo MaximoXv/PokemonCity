@@ -13,6 +13,13 @@ class Farm(Building):
 
         self.production_timer = 0
 
+        self.sprites = {
+            "building":  pygame.image.load("assets/farm_building.png").convert_alpha(),
+            "idle":  pygame.image.load("assets/farm.png").convert_alpha(),
+            "growing":  pygame.image.load("assets/farm_growing.png").convert_alpha(),
+            "ready":  pygame.image.load("assets/farm_ready.png").convert_alpha(),
+        }
+
     def plant(self, amount, duration):
 
         if self.state != "idle":
@@ -51,24 +58,12 @@ class Farm(Building):
 
     def draw(self, screen, rect):
 
-        if self.state == "building":
+        image = pygame.transform.smoothscale(
+            self.sprites[self.state],
+            rect.size
+        )
 
-            color = (100, 100, 100)
-
-        elif self.state == "idle":
-
-            color = (0, 200, 0)
-
-        elif self.state == "growing":
-
-            color = (255, 255, 0)
-
-        elif self.state == "ready":
-
-            color = (0, 255, 255)
-
-        pygame.draw.rect(
-            screen,
-            color,
-            rect
+        screen.blit(
+            image,
+            rect.topleft
         )

@@ -8,8 +8,9 @@ class PokemonCity:
     def __init__(self):
 
         pygame.init()
+        pygame.font.init()
 
-        self.screen = pygame.display.set_mode((1280, 720))
+        self.screen = pygame.display.set_mode((1000, 600))
         pygame.display.set_caption("Pokemon City")
 
         self.world = World()
@@ -51,3 +52,4 @@ if __name__ == "__main__":
     game = PokemonCity()
 
     game.run_game()
+    
