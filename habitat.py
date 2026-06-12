@@ -84,7 +84,6 @@ class Habitat(Building):
 
             self.stored_gold += len(self.pokemons)
 
-            # ⭐ clamp al cap
             if self.stored_gold >= self.gold_cap:
 
                 self.stored_gold = self.gold_cap
@@ -98,3 +97,19 @@ class Habitat(Building):
         )
 
         screen.blit(image, rect.topleft)
+
+        pokemon_size = 40
+
+        for i, pokemon in enumerate(self.pokemons[:6]):
+
+            pokemon_rect = pygame.Rect(
+                rect.x + 5 + (i % 3) * 45,
+                rect.y + 5 + (i // 3) * 45,
+                pokemon_size,
+                pokemon_size
+            )
+    
+            pokemon.draw(
+                screen,
+                pokemon_rect
+            )

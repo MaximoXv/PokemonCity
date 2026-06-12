@@ -1,3 +1,6 @@
+import pygame
+
+
 class Pokemon:
 
     HATCHING = "hatching"
@@ -22,8 +25,26 @@ class Pokemon:
 
         self.habitat = None
 
+        sprite_name = name.lower()
+
+        self.sprites = {
+            "base": pygame.image.load(
+                f"assets/{sprite_name}_1.png"
+            ).convert_alpha(),
+
+            "evo1": pygame.image.load(
+                f"assets/{sprite_name}_2.png"
+            ).convert_alpha(),
+
+            "evo2": pygame.image.load(
+                f"assets/{sprite_name}_3.png"
+            ).convert_alpha(),
+        }
+
     def food_required(self):
 
+        if self.level > 3:
+            return 10 ** 4
         return 10 ** self.level
 
     def feed(self, amount):
@@ -74,3 +95,25 @@ class Pokemon:
             if self.hatch_timer <= 0:
 
                 self.state = Pokemon.IDLE
+
+    def get_sprite(self):
+
+        if self.level >= 30:
+            return self.sprites["evo2"]
+
+        if self.level >= 10:
+            return self.sprites["evo1"]
+
+        return self.sprites["base"]
+
+    def draw(self, screen, rect):
+
+        image = pygame.transform.smoothscale(
+            self.get_sprite(),
+            rect.size
+        )
+
+        screen.blit(
+            image,
+            rect.topleft
+        )

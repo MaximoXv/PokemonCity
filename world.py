@@ -4,9 +4,13 @@ from farm import Farm
 from habitat import Habitat
 from menu_build import MenuBuild
 from menu_farm import MenuFarm
+from menu_feed import MenuFeed
+from menu_habitat import MenuHabitat
 from menu_nidal import MenuNidal
 from nidal import Nidal
 from plot import Plot
+from sprite import Sprite
+from text_box import TextBox
 
 
 class World:
@@ -14,17 +18,20 @@ class World:
     def __init__(self):
 
         self.food = 0
-        self.gold = 15000
+        self.gold = 1500000
 
         self.selected_pokemon = None
 
         self.plots = [
-            Plot(100, 400),
-            Plot(300, 400),
-            Plot(500, 400),
-            Plot(100, 200),
-            Plot(300, 200),
-            Plot(500, 200),
+            Plot(100, 75),
+            Plot(300, 75),
+            Plot(500, 75),
+            Plot(100, 250),
+            Plot(300, 250),
+            Plot(500, 250),
+            Plot(100, 425),
+            Plot(300, 425),
+            Plot(500, 425),
         ]
 
 
@@ -32,6 +39,8 @@ class World:
         self.menu_build = MenuBuild(self.build)
         self.menu_farm = MenuFarm(self)
         self.menu_nidal = MenuNidal(self)
+        self.menu_habitat = MenuHabitat(self)
+        self.menu_feed = MenuFeed(self)
 
     def handle_click(self, mx, my):
 
@@ -42,6 +51,11 @@ class World:
             return
         
         if self.menu_nidal.handle_click(mx, my):
+            return
+        if self.menu_habitat.handle_click(mx, my):
+            return
+        
+        if self.menu_feed.handle_click(mx, my):
             return
 
         for plot in self.plots:
@@ -98,10 +112,6 @@ class World:
 
                         return
                     
-                    if building.state == "idle":
-                        # Aca abriría el menú
-                        # self.menu_habitat.open(building)
-                        return
 
                     if building.state == "ready":
                         gold = building.collect()
@@ -110,7 +120,12 @@ class World:
                         print(
                             f"Gold: {self.gold}"
                         )
-                    
+                        return
+
+                    if building.state == "idle":
+                        # Aca abriría el menú
+                        self.menu_habitat.open(building)
+                        return
 
 
     def build(self, building_class, plot, habitat_type=None):
@@ -124,23 +139,21 @@ class World:
 
     def draw_hud(self, screen):
 
-        font = pygame.font.SysFont("Arial", 24)
+        text_gold = TextBox(25,0,100,50,f"{self.gold}")
+        text_food = TextBox(300,0,100,50,f"{self.food}")
 
-        gold_text = font.render(f"Gold: {self.gold}", True, (255, 255, 255))
-        food_text = font.render(f"Food: {self.food}", True, (255, 255, 255))
-
-        screen.blit(gold_text, (20, 20))
-        screen.blit(food_text, (20, 50))
+        text_gold.draw(screen)
+        text_food.draw(screen)
 
         if self.selected_pokemon:
 
-            pokemon_text = font.render(
+            rect = pygame.Rect(650, 0, 100, 100)
+            pokemon_text = TextBox(500,0,150,50,
                 f"Selected: {self.selected_pokemon.name}",
-                True,
-                (255, 255, 0)
             )
+            pokemon_text.draw(screen)
+            self.selected_pokemon.draw(screen,rect)
 
-            screen.blit(pokemon_text, (20, 80))
 
     def update(self, dt):
 
@@ -177,4 +190,6 @@ class World:
         self.menu_build.draw(screen)
         self.menu_farm.draw(screen)
         self.menu_nidal.draw(screen)
+        self.menu_habitat.draw(screen)
+        self.menu_feed.draw(screen)
         self.draw_hud(screen)

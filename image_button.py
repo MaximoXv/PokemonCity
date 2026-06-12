@@ -3,16 +3,7 @@ import pygame
 
 class ImageButton:
 
-    def __init__(
-        self,
-        x,
-        y,
-        image_path,
-        hover_image_path,
-        callback,
-        width=None,
-        height=None
-    ):
+    def __init__(self,x,y,image_path,hover_image_path,callback,width=None,height=None):
 
         self.callback = callback
 

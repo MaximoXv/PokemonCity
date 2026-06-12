@@ -1,7 +1,6 @@
 import pygame
 
 from image_button import ImageButton
-from button import Button
 from farm import Farm
 from habitat import Habitat
 from nidal import Nidal
@@ -17,19 +16,20 @@ class MenuBuild:
 
         self.buttons = [
             # Button( 100, 200, 100, 100, "Farm", lambda: on_build(Farm, self.selected_plot)),
-            ImageButton(100, 300,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Farm, self.selected_plot),150),
-            ImageButton(250, 300,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Habitat, self.selected_plot, "fire"),150),
-            ImageButton(400, 300,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Habitat, self.selected_plot, "water"),150),
-            ImageButton(550, 300,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Habitat, self.selected_plot, "nature"),150),
-            ImageButton(700, 300,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Nidal, self.selected_plot),150),
+            ImageButton(25, 350,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Farm, self.selected_plot),150),
+            ImageButton(225, 350,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Habitat, self.selected_plot, "fire"),150),
+            ImageButton(425, 350,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Habitat, self.selected_plot, "water"),150),
+            ImageButton(625, 350,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Habitat, self.selected_plot, "nature"),150),
+            ImageButton(825, 350,"assets/btn_comprar.png","assets/btn_comprar_hover.png",lambda: on_build(Nidal, self.selected_plot),150),
+            ImageButton(925, 25,"assets/x.png","assets/x_hover.png",self.close,50),
         ]
 
         self.images = [
-            Sprite(100,150, "assets/farm.png",150),
-            Sprite(250,150, "assets/fire_habitat.png",150),
-            Sprite(400,150, "assets/water_habitat.png",150),
-            Sprite(550,150, "assets/nature_habitat.png",150),
-            Sprite(700,150, "assets/nidal.png",150),
+            Sprite(25,200, "assets/farm.png",150),
+            Sprite(225,200, "assets/fire_habitat.png",150),
+            Sprite(425,200, "assets/water_habitat.png",150),
+            Sprite(625,150, "assets/nature_habitat.png",150),
+            Sprite(825,200, "assets/nidal.png",150),
         ]
 
 

@@ -1,17 +1,9 @@
 import pygame
 
 
-class Button:
+class TextBox:
 
-    def __init__(
-        self,
-        x,
-        y,
-        width,
-        height,
-        text,
-        callback
-    ):
+    def __init__(self,x,y,width, height,text):
 
         self.rect = pygame.Rect(
             x,
@@ -21,8 +13,6 @@ class Button:
         )
 
         self.text = text
-
-        self.callback = callback
 
         self.font = pygame.font.SysFont(
             None,
@@ -58,13 +48,3 @@ class Button:
             text_surface,
             text_rect
         )
-
-    def handle_click(self, mx, my):
-
-        if self.rect.collidepoint(mx, my):
-
-            self.callback()
-
-            return True
-
-        return False

@@ -1,6 +1,5 @@
 import pygame
 
-from button import Button
 from farm import Farm
 from image_button import ImageButton
 from sprite import Sprite
@@ -14,18 +13,18 @@ class MenuFarm:
         self.selected_farm: Farm | None = None
 
         self.buttons = [
-            ImageButton(100, 300,"assets/btn_cultivar.png","assets/btn_cultivar_hover.png",self.plant_100,150),
-            ImageButton(250, 300,"assets/btn_cultivar.png","assets/btn_cultivar_hover.png",self.plant_500,150),
-            ImageButton(400, 300,"assets/btn_cultivar.png","assets/btn_cultivar_hover.png",self.plant_2000,150),
-            ImageButton(550, 300,"assets/btn_cultivar.png","assets/btn_cultivar_hover.png",self.plant_10000,150),
-            Button( 1000, 100, 100, 100, "X", self.close),
+            ImageButton(25, 300,"assets/btn_cultivar.png","assets/btn_cultivar_hover.png",self.plant_100,200),
+            ImageButton(275, 300,"assets/btn_cultivar.png","assets/btn_cultivar_hover.png",self.plant_500,200),
+            ImageButton(525, 300,"assets/btn_cultivar.png","assets/btn_cultivar_hover.png",self.plant_2000,200),
+            ImageButton(775, 300,"assets/btn_cultivar.png","assets/btn_cultivar_hover.png",self.plant_10000,200),
+            ImageButton(925, 25,"assets/x.png","assets/x_hover.png",self.close,50),
         ]
 
         self.images = [
-            Sprite(100,150, "assets/food1.png",150),
-            Sprite(250,150, "assets/food2.png",150),
-            Sprite(400,150, "assets/food3.png",150),
-            Sprite(550,150, "assets/food4.png",150),
+            Sprite(25,150, "assets/food1.png",200),
+            Sprite(275,150, "assets/food2.png",200),
+            Sprite(525,150, "assets/food3.png",200),
+            Sprite(775,150, "assets/food4.png",200),
         ]
 
     def open(self, farm):

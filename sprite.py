@@ -3,14 +3,7 @@ import pygame
 
 class Sprite:
 
-    def __init__(
-        self,
-        x,
-        y,
-        image_path,
-        width=None,
-        height=None
-    ):
+    def __init__(self,x,y,image_path,width=None,height=None):
 
         self.image = pygame.image.load(
             image_path
