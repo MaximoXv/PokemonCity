@@ -1,12 +1,14 @@
 import pygame
 
+from utils import resource_path
+
 
 class Sprite:
 
     def __init__(self,x,y,image_path,width=None,height=None):
 
         self.image = pygame.image.load(
-            image_path
+            resource_path(image_path)
         ).convert_alpha()
 
         original_width = self.image.get_width()

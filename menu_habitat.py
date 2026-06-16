@@ -92,13 +92,13 @@ class MenuHabitat:
         ):
     
             x = 50 + (i % 3) * 300
-            y = 40 + (i // 3) * 150
+            y = 60 + (i // 3) * 150
     
             pokemon_rect = pygame.Rect(
                 x,
                 y,
-                100,
-                100
+                120,
+                120
             )
     
             pokemon.draw(

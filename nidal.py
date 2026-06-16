@@ -2,6 +2,7 @@ import pygame
 
 from building import Building
 from pokemon import Pokemon
+from utils import resource_path
 
 
 class Nidal(Building):
@@ -16,16 +17,16 @@ class Nidal(Building):
         self.hatch_timer = 0
 
         self.sprites = {
-            "idle": pygame.image.load("assets/nidal.png").convert_alpha(),
-            "building": pygame.image.load("assets/nidal_building.png").convert_alpha(),
+            "idle": pygame.image.load(resource_path("assets/nidal.png")).convert_alpha(),
+            "building": pygame.image.load(resource_path("assets/nidal_building.png")).convert_alpha(),
 
-            "hatching_fire": pygame.image.load("assets/nidal_fire_hatching.png").convert_alpha(),
-            "hatching_water": pygame.image.load("assets/nidal_water_hatching.png").convert_alpha(),
-            "hatching_nature": pygame.image.load("assets/nidal_nature_hatching.png").convert_alpha(),
+            "hatching_fire": pygame.image.load(resource_path("assets/nidal_fire_hatching.png")).convert_alpha(),
+            "hatching_water": pygame.image.load(resource_path("assets/nidal_water_hatching.png")).convert_alpha(),
+            "hatching_nature": pygame.image.load(resource_path("assets/nidal_nature_hatching.png")).convert_alpha(),
 
-            "ready_fire": pygame.image.load("assets/nidal_fire_ready.png").convert_alpha(),
-            "ready_water": pygame.image.load("assets/nidal_water_ready.png").convert_alpha(),
-            "ready_nature": pygame.image.load("assets/nidal_nature_ready.png").convert_alpha(),
+            "ready_fire": pygame.image.load(resource_path("assets/nidal_fire_ready.png")).convert_alpha(),
+            "ready_water": pygame.image.load(resource_path("assets/nidal_water_ready.png")).convert_alpha(),
+            "ready_nature": pygame.image.load(resource_path("assets/nidal_nature_ready.png")).convert_alpha(),
         }
 
 

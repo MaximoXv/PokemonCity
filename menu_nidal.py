@@ -89,7 +89,7 @@ class MenuNidal:
     def buy_fire(self):
 
         self._try_buy(
-            "torchic",
+            "Torchic",
             "fire",
             1000,
             20
@@ -98,7 +98,7 @@ class MenuNidal:
     def buy_water(self):
 
         self._try_buy(
-            "mudkip",
+            "Mudkip",
             "water",
             2000,
             25
@@ -107,7 +107,7 @@ class MenuNidal:
     def buy_nature(self):
 
         self._try_buy(
-            "treecko",
+            "Treecko",
             "nature",
             3000,
             30

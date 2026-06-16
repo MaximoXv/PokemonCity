@@ -1,5 +1,7 @@
 import pygame
 
+from utils import resource_path
+
 
 class Pokemon:
 
@@ -29,15 +31,15 @@ class Pokemon:
 
         self.sprites = {
             "base": pygame.image.load(
-                f"assets/{sprite_name}_1.png"
+                resource_path(f"assets/{sprite_name}_1.png")
             ).convert_alpha(),
 
             "evo1": pygame.image.load(
-                f"assets/{sprite_name}_2.png"
+                resource_path(f"assets/{sprite_name}_2.png")
             ).convert_alpha(),
 
             "evo2": pygame.image.load(
-                f"assets/{sprite_name}_3.png"
+                resource_path(f"assets/{sprite_name}_3.png")
             ).convert_alpha(),
         }
 

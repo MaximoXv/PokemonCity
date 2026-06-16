@@ -1,5 +1,7 @@
 import pygame
 
+from utils import resource_path
+
 
 class ImageButton:
 
@@ -8,11 +10,11 @@ class ImageButton:
         self.callback = callback
 
         self.normal_image = pygame.image.load(
-            image_path
+            resource_path(image_path)
         ).convert_alpha()
 
         self.hover_image = pygame.image.load(
-            hover_image_path
+            resource_path(hover_image_path)
         ).convert_alpha()
 
         original_width = self.normal_image.get_width()

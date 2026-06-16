@@ -2,6 +2,7 @@ import pygame
 
 from building import Building
 from pokemon import Pokemon
+from utils import resource_path
 
 
 class Habitat(Building):
@@ -20,15 +21,15 @@ class Habitat(Building):
 
         self.sprites = {
             "building": pygame.image.load(
-                f"assets/{habitat_type}_habitat_building.png"
+                resource_path(f"assets/{habitat_type}_habitat_building.png")
             ).convert_alpha(),
 
             "idle": pygame.image.load(
-                f"assets/{habitat_type}_habitat.png"
+                resource_path(f"assets/{habitat_type}_habitat.png")
             ).convert_alpha(),
 
             "ready": pygame.image.load(
-                f"assets/{habitat_type}_habitat_ready.png"
+                resource_path(f"assets/{habitat_type}_habitat_ready.png")
             ).convert_alpha(),
         }
 
@@ -108,7 +109,7 @@ class Habitat(Building):
                 pokemon_size,
                 pokemon_size
             )
-    
+
             pokemon.draw(
                 screen,
                 pokemon_rect

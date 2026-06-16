@@ -1,6 +1,7 @@
 import pygame
 
 from building import Building
+from utils import resource_path
 
 
 class Farm(Building):
@@ -14,10 +15,10 @@ class Farm(Building):
         self.production_timer = 0
 
         self.sprites = {
-            "building":  pygame.image.load("assets/farm_building.png").convert_alpha(),
-            "idle":  pygame.image.load("assets/farm.png").convert_alpha(),
-            "growing":  pygame.image.load("assets/farm_growing.png").convert_alpha(),
-            "ready":  pygame.image.load("assets/farm_ready.png").convert_alpha(),
+            "building":  pygame.image.load(resource_path("assets/farm_building.png")).convert_alpha(),
+            "idle":  pygame.image.load(resource_path("assets/farm.png")).convert_alpha(),
+            "growing":  pygame.image.load(resource_path("assets/farm_growing.png")).convert_alpha(),
+            "ready":  pygame.image.load(resource_path("assets/farm_ready.png")).convert_alpha(),
         }
 
     def plant(self, amount, duration):

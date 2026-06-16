@@ -23,15 +23,22 @@ class World:
         self.selected_pokemon = None
 
         self.plots = [
-            Plot(100, 75),
-            Plot(300, 75),
-            Plot(500, 75),
-            Plot(100, 250),
-            Plot(300, 250),
-            Plot(500, 250),
-            Plot(100, 425),
-            Plot(300, 425),
-            Plot(500, 425),
+            Plot(50, 75),
+            Plot(50, 250),
+            Plot(50, 425),
+            Plot(225, 75),
+            Plot(225, 250),
+            Plot(225, 425),
+            Plot(400, 75),
+            Plot(400, 250),
+            Plot(400, 425),
+            Plot(575, 75),
+            Plot(575, 250),
+            Plot(575, 425),
+            Plot(750, 75),
+            Plot(750, 250),
+            Plot(750, 425),
+
         ]
 
 
@@ -139,17 +146,21 @@ class World:
 
     def draw_hud(self, screen):
 
-        text_gold = TextBox(25,0,100,50,f"{self.gold}")
-        text_food = TextBox(300,0,100,50,f"{self.food}")
+        text_gold = TextBox(50,0,100,50,f"{self.gold}")
+
+        text_food = TextBox(325,0,100,50,f"{self.food}")
 
         text_gold.draw(screen)
         text_food.draw(screen)
+        Sprite(0,0, "assets/gold.png",50).draw(screen),
+        Sprite(275,0, "assets/berry2.png",50).draw(screen),
+
 
         if self.selected_pokemon:
 
-            rect = pygame.Rect(650, 0, 100, 100)
-            pokemon_text = TextBox(500,0,150,50,
-                f"Selected: {self.selected_pokemon.name}",
+            rect = pygame.Rect(700, -25, 100, 100)
+            pokemon_text = TextBox(500,0,225,50,
+                f"Seleccionado: {self.selected_pokemon.name}",
             )
             pokemon_text.draw(screen)
             self.selected_pokemon.draw(screen,rect)

@@ -12,10 +12,10 @@ class MenuFeed:
         self.selected_pokemon: Pokemon | None = None
 
         self.buttons = [
-            ImageButton(150, 450, "assets/alimentar_10.png", "assets/alimentar_10_hover.png", self.feed_10, 250),
-            ImageButton(450, 450, "assets/alimentar_100.png", "assets/alimentar_100_hover.png", self.feed_100, 250),
-            ImageButton(750, 450, "assets/alimentar_1000.png", "assets/alimentar_1000_hover.png", self.feed_1000, 250),
-            ImageButton(300, 600, "assets/alimentar_10000.png", "assets/alimentar_10000_hover.png", self.feed_10000, 250),
+            ImageButton(200, 400, "assets/alimentar_10.png", "assets/alimentar_10_hover.png", self.feed_10, 250),
+            ImageButton(500, 400, "assets/alimentar_100.png", "assets/alimentar_100_hover.png", self.feed_100, 250),
+            ImageButton(200, 500, "assets/alimentar_1000.png", "assets/alimentar_1000_hover.png", self.feed_1000, 250),
+            ImageButton(500, 500, "assets/alimentar_10000.png", "assets/alimentar_10000_hover.png", self.feed_10000, 250),
 
             ImageButton(925, 25, "assets/x.png", "assets/x_hover.png", self.close, 50),
         ]
@@ -100,10 +100,9 @@ class MenuFeed:
 
             screen.blit(
                 level_text,
-                (450, 270)
+                (400, 300)
             )
 
-            # NOMBRE (opcional pero útil)
             name_text = font.render(
                 self.selected_pokemon.name,
                 True,
@@ -112,7 +111,7 @@ class MenuFeed:
 
             screen.blit(
                 name_text,
-                (420, 300)
+                (500, 300)
             )
 
 
