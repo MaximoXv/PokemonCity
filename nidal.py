@@ -61,6 +61,17 @@ class Nidal(Building):
         self.hatch_timer = 0
 
         return pokemon
+    
+    def get_back(self, pokemon):
+        if self.state != "idle":
+            return
+        
+        pokemon.state = "hatching"
+        self.egg = pokemon
+        self.egg_type = pokemon.type
+
+        self.state = "ready"
+
 
 
     def update(self, dt):

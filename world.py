@@ -59,6 +59,7 @@ class World:
         
         if self.menu_nidal.handle_click(mx, my):
             return
+        
         if self.menu_habitat.handle_click(mx, my):
             return
         
@@ -98,6 +99,12 @@ class World:
                         )
 
                 if isinstance(building,Nidal):
+
+                    if building.state == "idle" and self.selected_pokemon != None:
+                        building.get_back(self.selected_pokemon)
+                        self.selected_pokemon = None
+                        return
+
                     if building.state == "idle":
                         self.menu_nidal.open(building)
                         return
@@ -184,12 +191,6 @@ class World:
                     plot.rect
                 )
             else:
-
-                pygame.draw.rect(
-                screen,
-                (60, 60, 60),
-                plot.rect
-                )
 
                 pygame.draw.rect(
                     screen,

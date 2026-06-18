@@ -10,7 +10,6 @@ class MenuNidal:
 
     def __init__(self, world):
 
-        font = pygame.font.SysFont("Arial", 24)
         self.world = world
 
         self.visible = False

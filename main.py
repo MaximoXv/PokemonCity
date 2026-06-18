@@ -1,5 +1,6 @@
 import pygame
 
+from utils import resource_path
 from world import World
 
 
@@ -12,6 +13,12 @@ class PokemonCity:
 
         self.screen = pygame.display.set_mode((1000, 600))
         pygame.display.set_caption("Pokemon City")
+
+        self.background = pygame.image.load(resource_path("assets/background.png")).convert()
+        self.background = pygame.transform.scale(
+            self.background,
+            self.screen.get_size()
+        )
 
         self.world = World()
 
@@ -38,7 +45,7 @@ class PokemonCity:
 
             self.world.update(dt)
 
-            self.screen.fill((30, 30, 30))
+            self.screen.blit(self.background, (0,0))
 
             self.world.draw(self.screen)
 
