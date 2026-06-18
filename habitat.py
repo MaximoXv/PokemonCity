@@ -74,6 +74,9 @@ class Habitat(Building):
 
         super().update(dt)
 
+        for pokemon in self.pokemons:
+            pokemon.update(dt)
+
         if self.state == "ready":
             return
 

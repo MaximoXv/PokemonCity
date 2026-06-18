@@ -26,11 +26,18 @@ class MenuFeed:
         self.selected_pokemon = pokemon
 
     def close(self):
+
+        if self.selected_pokemon and self.selected_pokemon.is_locked():
+            return
+
         self.visible = False
 
     def _try_feed(self, amount):
 
         if not self.selected_pokemon:
+            return
+        
+        if self.selected_pokemon and self.selected_pokemon.is_locked():
             return
 
         if self.world.food < amount:
