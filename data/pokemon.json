@@ -1,0 +1,87 @@
+{
+  "Torchic": {
+    "type": "fire",
+    "base_hp": 100,
+
+    "sprites": {
+      "front": "assets/pokemon/torchic_front.png",
+      "back": "assets/pokemon/torchic_back.png",
+      "star": "assets/pokemon/torchic_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Scratch" },
+      { "level": 10, "attack": "Ember" },
+      { "level": 20, "attack": "FlameCharge" },
+      { "level": 30, "attack": "Flamethrower" }
+    ],
+
+    "evolution": {
+      "level": 10,
+      "species": "Combusken"
+    }
+  },
+
+  "Combusken": {
+    "type": "fire",
+    "base_hp": 180,
+
+    "sprites": {
+      "front": "assets/pokemon/combusken_front.png",
+      "back": "assets/pokemon/combusken_back.png",
+      "star": "assets/pokemon/combusken_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Scratch" },
+      { "level": 10, "attack": "Ember" },
+      { "level": 20, "attack": "FlameCharge" },
+      { "level": 30, "attack": "Flamethrower" }
+    ],
+
+    "evolution": {
+      "level": 30,
+      "species": "Blaziken"
+    }
+  },
+
+  "Blaziken": {
+    "type": "fire",
+    "base_hp": 300,
+
+    "sprites": {
+      "front": "assets/pokemon/blaziken_front.png",
+      "back": "assets/pokemon/blaziken_back.png",
+      "star": "assets/pokemon/blaziken_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Scratch" },
+      { "level": 10, "attack": "Ember" },
+      { "level": 20, "attack": "FlameCharge" },
+      { "level": 30, "attack": "Flamethrower" }
+    ],
+
+    "evolution": null
+  },
+
+  "Groudon": {
+    "type": "ground",
+    "base_hp": 800,
+
+    "sprites": {
+      "front": "assets/pokemon/groudon_front.png",
+      "back": "assets/pokemon/groudon_back.png",
+      "star": "assets/pokemon/groudon_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "RockTomb" },
+      { "level": 10, "attack": "Earthquake" },
+      { "level": 20, "attack": "FlameCharge" },
+      { "level": 30, "attack": "Flamethrower" }
+    ],
+
+    "evolution": null
+  }
+}

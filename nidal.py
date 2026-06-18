@@ -1,19 +1,20 @@
 import pygame
 
 from building import Building
-from pokemon import Pokemon
+from pokemon.pokemon import Pokemon
 from utils import resource_path
 
 
 class Nidal(Building):
 
-    def __init__(self):
+    def __init__(self, db):
 
         super().__init__(5)
 
+        self.db = db
+
         self.egg = None
         self.egg_type = None
-
         self.hatch_timer = 0
 
         self.sprites = {
@@ -29,21 +30,24 @@ class Nidal(Building):
             "ready_nature": pygame.image.load(resource_path("assets/nidal_nature_ready.png")).convert_alpha(),
         }
 
-
-    def buy_egg(self, name, pokemon_type, duration):
+    def buy_egg(self, egg_type, duration):
 
         if self.state != "idle":
             return
 
-        self.egg = Pokemon(name, pokemon_type)
+        name = self.db.get_random_from_egg(egg_type)
 
-        self.egg.state = "hatching"
+        species = self.db.get_species(name)
+
+        self.egg = Pokemon(species, self.db)
+
+        self.egg.state = Pokemon.HATCHING
         self.egg.hatch_timer = duration
 
-        self.egg_type = pokemon_type
+        self.egg_type = egg_type
+        self.hatch_timer = duration
 
         self.state = "hatching"
-        self.hatch_timer = duration
 
     def collect(self):
 
@@ -61,18 +65,18 @@ class Nidal(Building):
         self.hatch_timer = 0
 
         return pokemon
-    
+
     def get_back(self, pokemon):
+
         if self.state != "idle":
             return
-        
+
         pokemon.state = "hatching"
+
         self.egg = pokemon
-        self.egg_type = pokemon.type
+        self.egg_type = pokemon.get_type()
 
         self.state = "ready"
-
-
 
     def update(self, dt):
 
@@ -86,7 +90,6 @@ class Nidal(Building):
                 self.egg.update(dt)
 
             if self.hatch_timer <= 0:
-
                 self.state = "ready"
 
     def draw(self, screen, rect):

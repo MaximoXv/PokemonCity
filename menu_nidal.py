@@ -2,45 +2,24 @@ import pygame
 
 from image_button import ImageButton
 from sprite import Sprite
-from nidal import Nidal
 from text_box import TextBox
 
 
 class MenuNidal:
 
-    def __init__(self, world):
+    def __init__(self, world, db):
 
         self.world = world
+        self.db = db
 
         self.visible = False
-        self.selected_nidal: Nidal | None = None
+        self.selected_nidal = None
 
         self.buttons = [
-            ImageButton(
-                100, 300,
-                "assets/btn_comprar.png",
-                "assets/btn_comprar_hover.png",
-                self.buy_fire,
-                150
-            ),
-
-            ImageButton(
-                300, 300,
-                "assets/btn_comprar.png",
-                "assets/btn_comprar_hover.png",
-                self.buy_water,
-                150
-            ),
-
-            ImageButton(
-                500, 300,
-                "assets/btn_comprar.png",
-                "assets/btn_comprar_hover.png",
-                self.buy_nature,
-                150
-            ),
-
-            ImageButton(925, 25,"assets/x.png","assets/x_hover.png",self.close,50),
+            ImageButton(100, 300, "assets/btn_comprar.png", "assets/btn_comprar_hover.png", self.buy_fire, 150),
+            ImageButton(300, 300, "assets/btn_comprar.png", "assets/btn_comprar_hover.png", self.buy_water, 150),
+            ImageButton(500, 300, "assets/btn_comprar.png", "assets/btn_comprar_hover.png", self.buy_nature, 150),
+            ImageButton(925, 25, "assets/x.png", "assets/x_hover.png", self.close, 50),
         ]
 
         self.images = [
@@ -50,11 +29,10 @@ class MenuNidal:
         ]
 
         self.prices = [
-            TextBox(100,275, 150, 25, "$1000"),
-            TextBox(300,275, 150, 25, "$2000"),
-            TextBox(500,275, 150, 25, "$3000",),
+            TextBox(100, 275, 150, 25, "$1000"),
+            TextBox(300, 275, 150, 25, "$2000"),
+            TextBox(500, 275, 150, 25, "$3000"),
         ]
-
 
     def open(self, nidal):
 
@@ -66,9 +44,9 @@ class MenuNidal:
         self.visible = False
         self.selected_nidal = None
 
-    def _try_buy(self, name, pokemon_type, cost, hatch_time):
+    def try_buy(self, egg_type, cost, duration):
 
-        if not self.selected_nidal:
+        if self.selected_nidal is None:
             return
 
         if self.world.gold < cost:
@@ -78,39 +56,20 @@ class MenuNidal:
         self.world.gold -= cost
 
         self.selected_nidal.buy_egg(
-            name,
-            pokemon_type,
-            hatch_time
+            egg_type,
+            duration
         )
 
         self.close()
 
     def buy_fire(self):
-
-        self._try_buy(
-            "Torchic",
-            "fire",
-            1000,
-            20
-        )
+        self.try_buy("fire", 1000, 20)
 
     def buy_water(self):
-
-        self._try_buy(
-            "Mudkip",
-            "water",
-            2000,
-            25
-        )
+        self.try_buy("water", 2000, 25)
 
     def buy_nature(self):
-
-        self._try_buy(
-            "Treecko",
-            "nature",
-            3000,
-            30
-        )
+        self.try_buy("nature", 3000, 30)
 
     def handle_click(self, mx, my):
 
@@ -118,7 +77,6 @@ class MenuNidal:
             return False
 
         for button in self.buttons:
-
             if button.handle_click(mx, my):
                 return True
 

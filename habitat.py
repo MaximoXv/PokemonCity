@@ -1,7 +1,7 @@
 import pygame
 
 from building import Building
-from pokemon import Pokemon
+from pokemon.pokemon import Pokemon
 from utils import resource_path
 
 
@@ -38,14 +38,13 @@ class Habitat(Building):
         if pokemon.state != Pokemon.IDLE:
             return False
 
-        if pokemon.type != self.type:
+        if pokemon.get_type() != self.type:
             return False
 
-        if pokemon.habitat:
+        if pokemon.habitat is not None:
             return False
 
         self.pokemons.append(pokemon)
-
         pokemon.habitat = self
 
         return True
@@ -55,7 +54,6 @@ class Habitat(Building):
         if pokemon in self.pokemons:
 
             self.pokemons.remove(pokemon)
-
             pokemon.habitat = None
 
     def collect(self):
@@ -90,6 +88,9 @@ class Habitat(Building):
                 self.stored_gold = self.gold_cap
                 self.state = "ready"
 
+        for p in self.pokemons:
+            p.update(dt)
+
     def draw(self, screen, rect):
 
         image = pygame.transform.smoothscale(
@@ -110,7 +111,4 @@ class Habitat(Building):
                 pokemon_size
             )
 
-            pokemon.draw(
-                screen,
-                pokemon_rect
-            )
+            pokemon.draw(screen, pokemon_rect)

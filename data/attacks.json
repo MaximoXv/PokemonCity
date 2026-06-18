@@ -1,0 +1,55 @@
+{
+  "Scratch": {
+    "label": "Arañazo",
+    "damage": 15,
+    "type": "normal"
+  },
+  "Ember": {
+    "label": "Ascuas",
+    "damage": 30,
+    "type": "fire"
+  },
+  "FlameCharge": {
+    "label": "Nitrocarga",
+    "damage": 50,
+    "type": "fire"
+  },
+  "Flamethrower": {
+    "label": "Lanzallamas",
+    "damage": 80,
+    "type": "fire"
+  },
+
+  "WaterGun": {
+    "label": "Pistola Agua",
+    "damage": 20,
+    "type": "water"
+  },
+  "HydroPump": {
+    "label": "Hidrobomba",
+    "damage": 90,
+    "type": "water"
+  },
+
+  "Leafage": {
+    "label": "Follaje",
+    "damage": 20,
+    "type": "grass"
+  },
+  "LeafBlade": {
+    "label": "Hoja Aguda",
+    "damage": 70,
+    "type": "grass"
+  },
+
+  "RockTomb": {
+    "label": "Tumba Rocas",
+    "damage": 35,
+    "type": "rock"
+  },
+  "Earthquake": {
+    "label": "Terremoto",
+    "damage": 100,
+    "type": "ground"
+  }
+}

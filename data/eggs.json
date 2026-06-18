@@ -1,0 +1,19 @@
+{
+  "fire": [
+    { "pokemon": "Torchic", "chance": 90 },
+    { "pokemon": "Combusken", "chance": 9.9 },
+    { "pokemon": "Groudon", "chance": 0.1 }
+  ],
+
+  "water": [
+    { "pokemon": "Mudkip", "chance": 90 },
+    { "pokemon": "Marshtomp", "chance": 9.9 },
+    { "pokemon": "Kyogre", "chance": 0.1 }
+  ],
+
+  "nature": [
+    { "pokemon": "Treecko", "chance": 90 },
+    { "pokemon": "Grovyle", "chance": 9.9 },
+    { "pokemon": "Rayquaza", "chance": 0.1 }
+  ]
+}
