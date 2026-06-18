@@ -22,6 +22,9 @@ class MenuFeed:
 
     def open(self, pokemon):
 
+        self.world.music.enabled = False
+        self.world.music.stop()
+
         self.visible = True
         self.selected_pokemon = pokemon
 
@@ -29,6 +32,8 @@ class MenuFeed:
 
         if self.selected_pokemon and self.selected_pokemon.is_locked():
             return
+        
+        self.world.music.enabled = True
 
         self.visible = False
 
@@ -41,9 +46,10 @@ class MenuFeed:
             return
 
         if self.world.food < amount:
+            self.world.sound.play("error")
             print("No hay comida")
             return
-
+        self.world.sound.play("click")
         self.world.food -= amount
         self.selected_pokemon.feed(amount)
 

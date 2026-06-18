@@ -93,7 +93,8 @@ class Pokemon:
             self.next_form = next_name
 
             try:
-                pygame.mixer.music.load("assets/pokemon/evolve_music.mp3")
+                pygame.mixer.music.load(resource_path("assets/pokemon/evolve_music.mp3"))
+                pygame.mixer.music.set_volume(1.0)
                 pygame.mixer.music.play(-1)
 
                 self.evo_state = "music"
@@ -128,8 +129,6 @@ class Pokemon:
 
     def update(self, dt):
 
-        print(self.state, self.name, self.next_form)
-
         if self.state == Pokemon.HATCHING:
             self.hatch_timer -= dt
             if self.hatch_timer <= 0:
@@ -143,7 +142,7 @@ class Pokemon:
             
                 self.evo_sound1_played = True
 
-                self.sound1 = pygame.mixer.Sound("assets/pokemon/evo_sound_1.mp3")
+                self.sound1 = pygame.mixer.Sound(resource_path("assets/pokemon/evo_sound_1.mp3"))
                 self.sound1.play()
 
             if self.evo_sound1_played and not self.evo_sound2_played:
@@ -151,7 +150,7 @@ class Pokemon:
                 if not pygame.mixer.get_busy():
                     self.evo_sound2_played = True
 
-                    self.sound2 = pygame.mixer.Sound("assets/pokemon/evo_sound_2.mp3")
+                    self.sound2 = pygame.mixer.Sound(resource_path("assets/pokemon/evo_sound_2.mp3"))
                     self.sound2.play()
 
                     self.name = self.next_form
@@ -163,7 +162,7 @@ class Pokemon:
 
                 self.evo_state = "success"
 
-                self.success_music = pygame.mixer.Sound("assets/pokemon/evolve_success.mp3")
+                self.success_music = pygame.mixer.Sound(resource_path("assets/pokemon/evolve_success.mp3"))
                 self.success_music.play()
 
                 self.success_timer = 4.0
@@ -186,16 +185,13 @@ class Pokemon:
     
         if self.state == Pokemon.EVOLVING and self.evo_state != "success":
         
-            # no retornar vacío nunca
             screen_image = image
     
-            # flash
             if int(self.evolution_timer * 10) % 2 == 0:
                 screen_image = pygame.Surface(rect.size, pygame.SRCALPHA)
                 screen.blit(screen_image, rect.topleft)
                 return
     
-            # zoom
             scale = 1.0 + (self.evolution_timer / self.evolution_duration) * 0.5
     
             size = (
@@ -213,6 +209,5 @@ class Pokemon:
             screen.blit(screen_image, pos)
             return
     
-        # normal
         image = pygame.transform.smoothscale(image, rect.size)
         screen.blit(image, rect.topleft)
