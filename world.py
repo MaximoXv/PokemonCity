@@ -7,8 +7,10 @@ from menu_farm import MenuFarm
 from menu_feed import MenuFeed
 from menu_habitat import MenuHabitat
 from menu_nidal import MenuNidal
+from music_manager import MusicManager
 from nidal import Nidal
 from plot import Plot
+from sound_manager import SoundManager
 from sprite import Sprite
 from text_box import TextBox
 
@@ -19,6 +21,11 @@ class World:
 
         self.food = 0
         self.gold = 1500000
+
+        self.music = MusicManager()
+        self.sound = SoundManager()
+
+        self.music.play_random()
 
         self.selected_pokemon = None
 
@@ -94,6 +101,8 @@ class World:
 
                         self.food += gained
 
+                        self.sound.play("collect_food")
+
                         print(
                             f"Food: {self.food}"
                         )
@@ -115,6 +124,7 @@ class World:
                         
                         pokemon = building.collect()
                         self.selected_pokemon = pokemon
+                        self.sound.play("click")
 
                 if isinstance(building, Habitat):
                     if self.selected_pokemon:
@@ -130,6 +140,7 @@ class World:
                     if building.state == "ready":
                         gold = building.collect()
                         self.gold += gold
+                        self.sound.play("collect_gold")
                         
                         print(
                             f"Gold: {self.gold}"
@@ -148,7 +159,7 @@ class World:
             plot.building = building_class(habitat_type)
         else:
             plot.building = building_class()
-
+        self.sound.play("click")
         self.menu_build.close()
 
     def draw_hud(self, screen):
@@ -174,6 +185,8 @@ class World:
 
 
     def update(self, dt):
+
+        self.music.update()
 
         for plot in self.plots:
 

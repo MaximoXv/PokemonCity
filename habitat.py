@@ -17,7 +17,7 @@ class Habitat(Building):
 
         self.gold_timer = 0
         self.stored_gold = 0
-        self.gold_cap = 10
+        self.gold_cap = 2000
 
         self.sprites = {
             "building": pygame.image.load(
@@ -74,6 +74,9 @@ class Habitat(Building):
 
         super().update(dt)
 
+        for pokemon in self.pokemons:
+            pokemon.update(dt)
+
         if self.state == "ready":
             return
 
@@ -83,7 +86,7 @@ class Habitat(Building):
 
             self.gold_timer -= 1
 
-            self.stored_gold += len(self.pokemons)
+            self.stored_gold += len(self.pokemons) * 200
 
             if self.stored_gold >= self.gold_cap:
 
