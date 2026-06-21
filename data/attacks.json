@@ -4,6 +4,52 @@
     "damage": 15,
     "type": "normal"
   },
+  "Tackle": {
+    "label": "Placaje",
+    "damage": 15,
+    "type": "normal"
+  },
+  "Headbutt": {
+    "label": "Golpe Cabeza",
+    "damage": 35,
+    "type": "normal"
+  },
+  "Slash": {
+    "label": "Cuchillada",
+    "damage": 50,
+    "type": "normal"
+  },
+  "TakeDown": {
+    "label": "Derribo",
+    "damage": 65,
+    "type": "normal"
+  },
+  "DoubleEdge": {
+    "label": "Doble Filo",
+    "damage": 90,
+    "type": "normal"
+  },
+  "BodySlam": {
+    "label": "Golpe Cuerpo",
+    "damage": 70,
+    "type": "normal"
+  },
+  "HyperBeam": {
+    "label": "Hiperrayo",
+    "damage": 120,
+    "type": "normal"
+  },
+  "FurySwipes": {
+    "label": "Golpes Furia",
+    "damage": 40,
+    "type": "normal"
+  },
+  "Yawn": {
+    "label": "Bostezo",
+    "damage": 0,
+    "type": "normal"
+  },
+
   "Ember": {
     "label": "Ascuas",
     "damage": 30,
@@ -25,9 +71,24 @@
     "damage": 20,
     "type": "water"
   },
+  "WaterPulse": {
+    "label": "Pulso Agua",
+    "damage": 45,
+    "type": "water"
+  },
+  "Surf": {
+    "label": "Surf",
+    "damage": 75,
+    "type": "water"
+  },
   "HydroPump": {
     "label": "Hidrobomba",
     "damage": 90,
+    "type": "water"
+  },
+  "OriginPulse": {
+    "label": "Pulso Primigenio",
+    "damage": 110,
     "type": "water"
   },
 
@@ -36,9 +97,24 @@
     "damage": 20,
     "type": "grass"
   },
+  "Absorb": {
+    "label": "Absorber",
+    "damage": 20,
+    "type": "grass"
+  },
+  "MegaDrain": {
+    "label": "Megaagotar",
+    "damage": 40,
+    "type": "grass"
+  },
   "LeafBlade": {
     "label": "Hoja Aguda",
     "damage": 70,
+    "type": "grass"
+  },
+  "SolarBeam": {
+    "label": "Rayo Solar",
+    "damage": 120,
     "type": "grass"
   },
 
@@ -47,9 +123,95 @@
     "damage": 35,
     "type": "rock"
   },
+
+  "MudShot": {
+    "label": "Disparo Lodo",
+    "damage": 40,
+    "type": "ground"
+  },
   "Earthquake": {
     "label": "Terremoto",
     "damage": 100,
     "type": "ground"
+  },
+
+  "Bite": {
+    "label": "Mordisco",
+    "damage": 35,
+    "type": "dark"
+  },
+  "Crunch": {
+    "label": "Triturar",
+    "damage": 80,
+    "type": "dark"
+  },
+
+  "Confusion": {
+    "label": "Confusión",
+    "damage": 25,
+    "type": "psychic"
+  },
+  "Teleport": {
+    "label": "Teletransporte",
+    "damage": 0,
+    "type": "psychic"
+  },
+  "Psybeam": {
+    "label": "Psicorrayo",
+    "damage": 55,
+    "type": "psychic"
+  },
+  "Psychic": {
+    "label": "Psíquico",
+    "damage": 90,
+    "type": "psychic"
+  },
+  "FutureSight": {
+    "label": "Premonición",
+    "damage": 110,
+    "type": "psychic"
+  },
+
+  "MetalClaw": {
+    "label": "Garra Metal",
+    "damage": 35,
+    "type": "steel"
+  },
+  "IronHead": {
+    "label": "Cabeza de Hierro",
+    "damage": 80,
+    "type": "steel"
+  },
+  "IronTail": {
+    "label": "Cola Férrea",
+    "damage": 90,
+    "type": "steel"
+  },
+  "HeavySlam": {
+    "label": "Cuerpo Pesado",
+    "damage": 100,
+    "type": "steel"
+  },
+
+  "Twister": {
+    "label": "Ciclón",
+    "damage": 40,
+    "type": "dragon"
+  },
+  "DragonBreath": {
+    "label": "Dragoaliento",
+    "damage": 60,
+    "type": "dragon"
+  },
+  "Outrage": {
+    "label": "Enfado",
+    "damage": 120,
+    "type": "dragon"
+  },
+
+  "Fly": {
+    "label": "Vuelo",
+    "damage": 70,
+    "type": "flying"
   }
 }

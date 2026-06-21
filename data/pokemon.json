@@ -66,7 +66,7 @@
   },
 
   "Groudon": {
-    "type": "ground",
+    "type": "fire",
     "base_hp": 800,
 
     "sprites": {
@@ -152,7 +152,7 @@
   },
 
   "Treecko": {
-    "type": "grass",
+    "type": "nature",
     "base_hp": 100,
 
     "sprites": {
@@ -175,7 +175,7 @@
   },
 
   "Grovyle": {
-    "type": "grass",
+    "type": "nature",
     "base_hp": 190,
 
     "sprites": {
@@ -198,7 +198,7 @@
   },
 
   "Sceptile": {
-    "type": "grass",
+    "type": "nature",
     "base_hp": 300,
 
     "sprites": {
@@ -522,7 +522,7 @@
   },
 
   "Rayquaza": {
-    "type": "dragon",
+    "type": "nature",
     "base_hp": 850,
 
     "sprites": {
