@@ -50,10 +50,13 @@ class MenuNidal:
             return
 
         if self.world.gold < cost:
+            self.world.sound.play("error")
             print("No hay oro")
             return
 
         self.world.gold -= cost
+
+        self.world.sound.play("click")
 
         self.selected_nidal.buy_egg(
             egg_type,

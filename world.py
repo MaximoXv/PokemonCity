@@ -9,8 +9,10 @@ from menu_farm import MenuFarm
 from menu_feed import MenuFeed
 from menu_habitat import MenuHabitat
 from menu_nidal import MenuNidal
-
+from music_manager import MusicManager
+from nidal import Nidal
 from plot import Plot
+from sound_manager import SoundManager
 from sprite import Sprite
 from text_box import TextBox
 
@@ -23,6 +25,11 @@ class World:
 
         self.food = 0
         self.gold = 1500000
+
+        self.music = MusicManager()
+        self.sound = SoundManager()
+
+        self.music.play_random()
 
         self.selected_pokemon = None
 
@@ -39,6 +46,12 @@ class World:
             Plot(400, 75),
             Plot(400, 250),
             Plot(400, 425),
+            Plot(575, 75),
+            Plot(575, 250),
+            Plot(575, 425),
+            Plot(750, 75),
+            Plot(750, 250),
+            Plot(750, 425),
         ]
 
         self.menu_build = MenuBuild(self.build)
@@ -81,8 +94,16 @@ class World:
                         return
 
                     elif building.state == "ready":
-                        self.food += building.collect()
-                        return
+
+                        gained = building.collect()
+
+                        self.food += gained
+
+                        self.sound.play("collect_food")
+
+                        print(
+                            f"Food: {self.food}"
+                        )
 
                 if isinstance(building, Nidal):
 
@@ -99,8 +120,10 @@ class World:
 
                         if self.selected_pokemon is not None:
                             return
-
-                        self.selected_pokemon = building.collect()
+                        
+                        pokemon = building.collect()
+                        self.selected_pokemon = pokemon
+                        self.sound.play("click")
 
                 if isinstance(building, Habitat):
 
@@ -114,7 +137,13 @@ class World:
                         return
 
                     if building.state == "ready":
-                        self.gold += building.collect()
+                        gold = building.collect()
+                        self.gold += gold
+                        self.sound.play("collect_gold")
+                        
+                        print(
+                            f"Gold: {self.gold}"
+                        )
                         return
 
                     if building.state == "idle":
@@ -134,7 +163,7 @@ class World:
         else:
         
             plot.building = building_class()
-    
+        self.sound.play("click")
         self.menu_build.close()
     
     def draw_hud(self, screen):
@@ -162,6 +191,8 @@ class World:
             self.selected_pokemon.draw(screen, rect)
 
     def update(self, dt):
+
+        self.music.update()
 
         for plot in self.plots:
 

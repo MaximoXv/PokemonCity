@@ -41,11 +41,14 @@ class MenuFarm:
             return
 
         if self.world.gold < cost:
+            self.world.sound.play("error")
             print("No hay oro")
             return
 
         self.world.gold -= cost
         self.selected_farm.plant(amount, duration)
+        self.world.sound.play("click")
+
         self.close()
 
     def plant_100(self):

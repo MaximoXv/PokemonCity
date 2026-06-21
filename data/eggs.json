@@ -1,8 +1,8 @@
 {
   "fire": [
-    { "pokemon": "Torchic", "chance": 90 },
-    { "pokemon": "Combusken", "chance": 9.9 },
-    { "pokemon": "Groudon", "chance": 0.1 }
+    { "pokemon": "Torchic", "chance": 60 },
+    { "pokemon": "Combusken", "chance": 20 },
+    { "pokemon": "Groudon", "chance": 20 }
   ],
 
   "water": [

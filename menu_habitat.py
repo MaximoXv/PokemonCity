@@ -60,6 +60,7 @@ class MenuHabitat:
         self.close()
 
         self.world.menu_feed.open(pokemon)
+        self.world.sound.play("click")
 
     def handle_click(self, mx, my):
 

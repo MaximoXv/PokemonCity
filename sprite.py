@@ -14,7 +14,6 @@ class Sprite:
         original_width = self.image.get_width()
         original_height = self.image.get_height()
 
-        # mantener proporción si solo uno está definido
         if width and not height:
 
             ratio = width / original_width

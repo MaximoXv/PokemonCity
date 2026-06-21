@@ -66,7 +66,7 @@
   },
 
   "Groudon": {
-    "type": "ground",
+    "type": "fire",
     "base_hp": 800,
 
     "sprites": {
