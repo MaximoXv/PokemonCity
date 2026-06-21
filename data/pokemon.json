@@ -66,7 +66,7 @@
   },
 
   "Groudon": {
-    "type": "fire",
+    "type": "ground",
     "base_hp": 800,
 
     "sprites": {
@@ -83,5 +83,462 @@
     ],
 
     "evolution": null
+  },
+
+  "Mudkip": {
+    "type": "water",
+    "base_hp": 110,
+
+    "sprites": {
+      "front": "assets/pokemon/mudkip_front.png",
+      "back": "assets/pokemon/mudkip_back.png",
+      "star": "assets/pokemon/mudkip_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Tackle" },
+      { "level": 10, "attack": "WaterGun" },
+      { "level": 20, "attack": "MudShot" },
+      { "level": 30, "attack": "Surf" }
+    ],
+
+    "evolution": {
+      "level": 16,
+      "species": "Marshtomp"
+    }
+  },
+
+  "Marshtomp": {
+    "type": "water",
+    "base_hp": 200,
+
+    "sprites": {
+      "front": "assets/pokemon/marshtomp_front.png",
+      "back": "assets/pokemon/marshtomp_back.png",
+      "star": "assets/pokemon/marshtomp_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Tackle" },
+      { "level": 10, "attack": "WaterGun" },
+      { "level": 20, "attack": "MudShot" },
+      { "level": 30, "attack": "Surf" }
+    ],
+
+    "evolution": {
+      "level": 36,
+      "species": "Swampert"
+    }
+  },
+
+  "Swampert": {
+    "type": "water",
+    "base_hp": 320,
+
+    "sprites": {
+      "front": "assets/pokemon/swampert_front.png",
+      "back": "assets/pokemon/swampert_back.png",
+      "star": "assets/pokemon/swampert_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Tackle" },
+      { "level": 10, "attack": "WaterGun" },
+      { "level": 20, "attack": "MudShot" },
+      { "level": 30, "attack": "HydroPump" }
+    ],
+
+    "evolution": null
+  },
+
+  "Treecko": {
+    "type": "grass",
+    "base_hp": 100,
+
+    "sprites": {
+      "front": "assets/pokemon/treecko_front.png",
+      "back": "assets/pokemon/treecko_back.png",
+      "star": "assets/pokemon/treecko_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Pound" },
+      { "level": 10, "attack": "Absorb" },
+      { "level": 20, "attack": "MegaDrain" },
+      { "level": 30, "attack": "LeafBlade" }
+    ],
+
+    "evolution": {
+      "level": 16,
+      "species": "Grovyle"
+    }
+  },
+
+  "Grovyle": {
+    "type": "grass",
+    "base_hp": 190,
+
+    "sprites": {
+      "front": "assets/pokemon/grovyle_front.png",
+      "back": "assets/pokemon/grovyle_back.png",
+      "star": "assets/pokemon/grovyle_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Pound" },
+      { "level": 10, "attack": "Absorb" },
+      { "level": 20, "attack": "MegaDrain" },
+      { "level": 30, "attack": "LeafBlade" }
+    ],
+
+    "evolution": {
+      "level": 36,
+      "species": "Sceptile"
+    }
+  },
+
+  "Sceptile": {
+    "type": "grass",
+    "base_hp": 300,
+
+    "sprites": {
+      "front": "assets/pokemon/sceptile_front.png",
+      "back": "assets/pokemon/sceptile_back.png",
+      "star": "assets/pokemon/sceptile_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Pound" },
+      { "level": 10, "attack": "Absorb" },
+      { "level": 20, "attack": "LeafBlade" },
+      { "level": 30, "attack": "SolarBeam" }
+    ],
+
+    "evolution": null
+  },
+
+  "Zigzagoon": {
+    "type": "normal",
+    "base_hp": 90,
+
+    "sprites": {
+      "front": "assets/pokemon/zigzagoon_front.png",
+      "back": "assets/pokemon/zigzagoon_back.png",
+      "star": "assets/pokemon/zigzagoon_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Tackle" },
+      { "level": 10, "attack": "Headbutt" },
+      { "level": 20, "attack": "Slash" },
+      { "level": 30, "attack": "DoubleEdge" }
+    ],
+
+    "evolution": {
+      "level": 20,
+      "species": "Linoone"
+    }
+  },
+
+  "Linoone": {
+    "type": "normal",
+    "base_hp": 180,
+
+    "sprites": {
+      "front": "assets/pokemon/linoone_front.png",
+      "back": "assets/pokemon/linoone_back.png",
+      "star": "assets/pokemon/linoone_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Tackle" },
+      { "level": 10, "attack": "Headbutt" },
+      { "level": 20, "attack": "Slash" },
+      { "level": 30, "attack": "DoubleEdge" }
+    ],
+
+    "evolution": null
+  },
+
+  "Poochyena": {
+    "type": "dark",
+    "base_hp": 95,
+
+    "sprites": {
+      "front": "assets/pokemon/poochyena_front.png",
+      "back": "assets/pokemon/poochyena_back.png",
+      "star": "assets/pokemon/poochyena_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Tackle" },
+      { "level": 10, "attack": "Bite" },
+      { "level": 20, "attack": "Crunch" },
+      { "level": 30, "attack": "TakeDown" }
+    ],
+
+    "evolution": {
+      "level": 18,
+      "species": "Mightyena"
+    }
+  },
+
+  "Mightyena": {
+    "type": "dark",
+    "base_hp": 220,
+
+    "sprites": {
+      "front": "assets/pokemon/mightyena_front.png",
+      "back": "assets/pokemon/mightyena_back.png",
+      "star": "assets/pokemon/mightyena_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Tackle" },
+      { "level": 10, "attack": "Bite" },
+      { "level": 20, "attack": "Crunch" },
+      { "level": 30, "attack": "TakeDown" }
+    ],
+
+    "evolution": null
+  },
+
+  "Ralts": {
+    "type": "psychic",
+    "base_hp": 80,
+
+    "sprites": {
+      "front": "assets/pokemon/ralts_front.png",
+      "back": "assets/pokemon/ralts_back.png",
+      "star": "assets/pokemon/ralts_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Confusion" },
+      { "level": 10, "attack": "Teleport" },
+      { "level": 20, "attack": "Psybeam" },
+      { "level": 30, "attack": "Psychic" }
+    ],
+
+    "evolution": {
+      "level": 20,
+      "species": "Kirlia"
+    }
+  },
+
+  "Kirlia": {
+    "type": "psychic",
+    "base_hp": 160,
+
+    "sprites": {
+      "front": "assets/pokemon/kirlia_front.png",
+      "back": "assets/pokemon/kirlia_back.png",
+      "star": "assets/pokemon/kirlia_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Confusion" },
+      { "level": 10, "attack": "Teleport" },
+      { "level": 20, "attack": "Psybeam" },
+      { "level": 30, "attack": "Psychic" }
+    ],
+
+    "evolution": {
+      "level": 30,
+      "species": "Gardevoir"
+    }
+  },
+
+  "Gardevoir": {
+    "type": "psychic",
+    "base_hp": 280,
+
+    "sprites": {
+      "front": "assets/pokemon/gardevoir_front.png",
+      "back": "assets/pokemon/gardevoir_back.png",
+      "star": "assets/pokemon/gardevoir_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Confusion" },
+      { "level": 10, "attack": "Psybeam" },
+      { "level": 20, "attack": "Psychic" },
+      { "level": 30, "attack": "FutureSight" }
+    ],
+
+    "evolution": null
+  },
+
+  "Slakoth": {
+    "type": "normal",
+    "base_hp": 120,
+
+    "sprites": {
+      "front": "assets/pokemon/slakoth_front.png",
+      "back": "assets/pokemon/slakoth_back.png",
+      "star": "assets/pokemon/slakoth_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Scratch" },
+      { "level": 10, "attack": "Yawn" },
+      { "level": 20, "attack": "Slash" },
+      { "level": 30, "attack": "BodySlam" }
+    ],
+
+    "evolution": {
+      "level": 18,
+      "species": "Vigoroth"
+    }
+  },
+
+  "Vigoroth": {
+    "type": "normal",
+    "base_hp": 220,
+
+    "sprites": {
+      "front": "assets/pokemon/vigoroth_front.png",
+      "back": "assets/pokemon/vigoroth_back.png",
+      "star": "assets/pokemon/vigoroth_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Scratch" },
+      { "level": 10, "attack": "Slash" },
+      { "level": 20, "attack": "FurySwipes" },
+      { "level": 30, "attack": "BodySlam" }
+    ],
+
+    "evolution": {
+      "level": 36,
+      "species": "Slaking"
+    }
+  },
+
+  "Slaking": {
+    "type": "normal",
+    "base_hp": 400,
+
+    "sprites": {
+      "front": "assets/pokemon/slaking_front.png",
+      "back": "assets/pokemon/slaking_back.png",
+      "star": "assets/pokemon/slaking_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Scratch" },
+      { "level": 10, "attack": "Slash" },
+      { "level": 20, "attack": "BodySlam" },
+      { "level": 30, "attack": "HyperBeam" }
+    ],
+
+    "evolution": null
+  },
+
+  "Aron": {
+    "type": "steel",
+    "base_hp": 130,
+
+    "sprites": {
+      "front": "assets/pokemon/aron_front.png",
+      "back": "assets/pokemon/aron_back.png",
+      "star": "assets/pokemon/aron_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Tackle" },
+      { "level": 10, "attack": "MetalClaw" },
+      { "level": 20, "attack": "IronHead" },
+      { "level": 30, "attack": "IronTail" }
+    ],
+
+    "evolution": {
+      "level": 32,
+      "species": "Lairon"
+    }
+  },
+
+  "Lairon": {
+    "type": "steel",
+    "base_hp": 260,
+
+    "sprites": {
+      "front": "assets/pokemon/lairon_front.png",
+      "back": "assets/pokemon/lairon_back.png",
+      "star": "assets/pokemon/lairon_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Tackle" },
+      { "level": 10, "attack": "MetalClaw" },
+      { "level": 20, "attack": "IronHead" },
+      { "level": 30, "attack": "IronTail" }
+    ],
+
+    "evolution": {
+      "level": 42,
+      "species": "Aggron"
+    }
+  },
+
+  "Aggron": {
+    "type": "steel",
+    "base_hp": 420,
+
+    "sprites": {
+      "front": "assets/pokemon/aggron_front.png",
+      "back": "assets/pokemon/aggron_back.png",
+      "star": "assets/pokemon/aggron_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "MetalClaw" },
+      { "level": 10, "attack": "IronHead" },
+      { "level": 20, "attack": "IronTail" },
+      { "level": 30, "attack": "HeavySlam" }
+    ],
+
+    "evolution": null
+  },
+
+  "Kyogre": {
+    "type": "water",
+    "base_hp": 800,
+
+    "sprites": {
+      "front": "assets/pokemon/kyogre_front.png",
+      "back": "assets/pokemon/kyogre_back.png",
+      "star": "assets/pokemon/kyogre_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "WaterPulse" },
+      { "level": 10, "attack": "Surf" },
+      { "level": 20, "attack": "HydroPump" },
+      { "level": 30, "attack": "OriginPulse" }
+    ],
+
+    "evolution": null
+  },
+
+  "Rayquaza": {
+    "type": "dragon",
+    "base_hp": 850,
+
+    "sprites": {
+      "front": "assets/pokemon/rayquaza_front.png",
+      "back": "assets/pokemon/rayquaza_back.png",
+      "star": "assets/pokemon/rayquaza_star.png"
+    },
+
+    "attacks": [
+      { "level": 1, "attack": "Twister" },
+      { "level": 10, "attack": "DragonBreath" },
+      { "level": 20, "attack": "Fly" },
+      { "level": 30, "attack": "Outrage" }
+    ],
+
+    "evolution": null
   }
+
 }
